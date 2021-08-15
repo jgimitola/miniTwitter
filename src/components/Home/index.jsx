@@ -7,6 +7,9 @@ const Home = () => {
             <Helmet>
                 <title>MiniTwitter - Home</title>
                 <meta name="description" content="Watch what is happening now. Read the stories from all around the world" />
+
+                <meta property="og:title" content="MiniTwitter - Home" />
+                <meta property="og:description" content="Watch what is happening now. Read the stories from all around the world" />
             </Helmet>
 
             <h1>Home</h1>

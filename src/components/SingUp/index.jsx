@@ -7,6 +7,9 @@ const SingUp = () => {
             <Helmet>
                 <title>MiniTwitter - Register</title>
                 <meta name="description" content="Create your MiniTwitter account" />
+
+                <meta property="og:title" content="MiniTwitter - Register" />
+                <meta property="og:description" content="Create your MiniTwitter account." />
             </Helmet>
 
             <h1>Create your account</h1>

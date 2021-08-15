@@ -8,6 +8,9 @@ const Tweet = () => {
             <Helmet>
                 <title>MiniTwitter - Tweet</title>
                 <meta name="description" content="Basic Tweet description" />
+
+                <meta property="og:title" content="MiniTwitter - Tweet" />
+                <meta property="og:description" content="Basic Tweet description." />
             </Helmet>
 
             <h1>Tweet title</h1>

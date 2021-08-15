@@ -5,7 +5,10 @@ const PasswordRecovery = () => {
         <div>
             <Helmet>
                 <title>MiniTwitter - Password Recovery</title>
-                <meta name="description" content="Restore your password account" />
+                <meta name="description" content="Restore your account password" />
+
+                <meta property="og:title" content="MiniTwitter - Password Recovery" />
+                <meta property="og:description" content="Restore your account password" />
             </Helmet>
 
             <h1>Find your Twitter account</h1>

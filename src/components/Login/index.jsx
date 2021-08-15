@@ -7,6 +7,9 @@ const Login = () => {
             <Helmet>
                 <title>MiniTwitter - Login</title>
                 <meta name="description" content="Log in to your MiniTwitter account" />
+
+                <meta property="og:title" content="MiniTwitter - Login" />
+                <meta property="og:description" content="Log in to your MiniTwitter account" />
             </Helmet>
 
             <h1>Log In to MiniTwitter</h1>

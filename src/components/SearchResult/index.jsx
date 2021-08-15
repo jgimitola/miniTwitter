@@ -6,6 +6,9 @@ const SearchResult = () => {
             <Helmet>
                 <title>MiniTwitter - Search Results</title>
                 <meta name="description" content="Results for search criteria" />
+
+                <meta property="og:title" content="MiniTwitter - Search Results" />
+                <meta property="og:description" content="Results for search criteria." />
             </Helmet>
 
             <h1>Search results for: </h1>

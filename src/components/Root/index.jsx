@@ -7,6 +7,9 @@ const Root = () => {
             <Helmet>
                 <title>MiniTwitter</title>
                 <meta name="description" content="MiniTwitter is a clon Twitter clon page" />
+
+                <meta property="og:title" content="MiniTwitter" />
+                <meta property="og:description" content="MiniTwitter is a clon Twitter clon page. Come and take a look." />
             </Helmet>
 
             <h1>MiniTwitter</h1>
