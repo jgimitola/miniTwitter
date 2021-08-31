@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./App.css";
 
-import routes from "./lib/routes";
+import routes, { generateMeta } from "./lib/routes";
 import Nav from "./components/unrestricted/Nav";
 
 const App = () => {
@@ -13,11 +13,19 @@ const App = () => {
       <BrowserRouter>
         <Nav />
         <Switch>
-          {unrestricted.map(({ path, component }) => (
-            <Route exact path={path} component={component} />
+          {unrestricted.map(({ path, Component, meta }) => (
+            <Route
+              exact
+              path={path}
+              render={() => <Component meta={generateMeta(meta)} />}
+            />
           ))}
-          {restricted.map(({ path, component }) => (
-            <Route exact path={path} component={component} />
+          {restricted.map(({ path, Component, meta }) => (
+            <Route
+              exact
+              path={path}
+              render={() => <Component meta={generateMeta(meta)} />}
+            />
           ))}
         </Switch>
       </BrowserRouter>

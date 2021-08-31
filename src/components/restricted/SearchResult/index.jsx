@@ -1,13 +1,9 @@
-import { Helmet } from "react-helmet";
-
-import { generateMeta } from "../../../lib/routes";
-
-const SearchResult = () => {
-  const meta = generateMeta("/search/results");
+const SearchResult = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <h1>Search results for: </h1>
     </div>

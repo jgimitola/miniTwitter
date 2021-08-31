@@ -1,14 +1,11 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-import { generateMeta } from "../../../lib/routes";
-
-const Root = () => {
-  const meta = generateMeta("/");
+const Root = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <h1>MiniTwitter</h1>
       <h2>What's happening now.</h2>

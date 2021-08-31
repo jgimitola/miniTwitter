@@ -1,13 +1,9 @@
-import { Helmet } from "react-helmet";
-
-import { generateMeta } from "../../../lib/routes";
-
-const Trend = () => {
-  const meta = generateMeta("/trending/:topic");
+const Trend = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <h1>Trending page</h1>
     </div>

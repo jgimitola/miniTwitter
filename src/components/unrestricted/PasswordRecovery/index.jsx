@@ -1,13 +1,9 @@
-import { Helmet } from "react-helmet";
-
-import { generateMeta } from "../../../lib/routes";
-
-const PasswordRecovery = () => {
-  const meta = generateMeta("/passwordrecovery");
+const PasswordRecovery = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <h1>Find your Twitter account</h1>
       <label for="pr-emailField">

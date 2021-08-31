@@ -9,13 +9,14 @@ import Tweet from "../components/restricted/Tweet";
 import SearchResult from "../components/restricted/SearchResult";
 import Timeline from "../components/restricted/Timeline";
 import Trend from "../components/restricted/Trend";
+import { Helmet } from "react-helmet";
 
 const routes = {
   unrestricted: [
     {
       text: "🐦 miniTwitter",
       path: "/",
-      component: Root,
+      Component: Root,
       meta: {
         title: "MiniTwitter",
         description: "MiniTwitter is a clon Twitter clon page",
@@ -24,7 +25,7 @@ const routes = {
     {
       text: "Log In",
       path: "/login",
-      component: Login,
+      Component: Login,
       meta: {
         title: "MiniTwitter - Login",
         description: "Log in to your MiniTwitter account",
@@ -33,7 +34,7 @@ const routes = {
     {
       text: "Sign Up",
       path: "/signup",
-      component: SignUp,
+      Component: SignUp,
       meta: {
         title: "MiniTwitter - Register",
         description: "Create your MiniTwitter account",
@@ -42,7 +43,7 @@ const routes = {
     {
       text: "Password Recovery",
       path: "/passwordrecovery",
-      component: PasswordRecovery,
+      Component: PasswordRecovery,
       meta: {
         title: "MiniTwitter - Password Recovery",
         description: "Restore your account password",
@@ -53,7 +54,7 @@ const routes = {
     {
       text: "🏡 Home",
       path: "/home",
-      component: Home,
+      Component: Home,
       meta: {
         title: "MiniTwitter - Home",
         description:
@@ -63,7 +64,7 @@ const routes = {
     {
       text: "Profile",
       path: "/profile",
-      component: Profile,
+      Component: Profile,
       meta: {
         title: "MiniTwitter - Profile",
         description: "Your profile in MiniTwitter",
@@ -72,7 +73,7 @@ const routes = {
     {
       text: "TimeLine",
       path: "/timeline/:user",
-      component: Timeline,
+      Component: Timeline,
       meta: {
         title: "",
         description: "",
@@ -81,7 +82,7 @@ const routes = {
     {
       text: "Search Result",
       path: "/search/results",
-      component: SearchResult,
+      Component: SearchResult,
       meta: {
         title: "MiniTwitter - Search Results",
         description: "Results for search criteria",
@@ -90,7 +91,7 @@ const routes = {
     {
       text: "Tweet",
       path: "/tweets/:id",
-      component: Tweet,
+      Component: Tweet,
       meta: {
         title: "MiniTwitter - Tweet",
         description: "Basic Tweet description",
@@ -99,7 +100,7 @@ const routes = {
     {
       text: "Trending Topic",
       path: "/trending/:topic",
-      component: Trend,
+      Component: Trend,
       meta: {
         title: "MiniTwitter - Trending",
         description: "Topic is trending on MiniTwitter, take a look",
@@ -108,26 +109,15 @@ const routes = {
   ],
 };
 
-const generateMeta = (path) => {
-  const restricted = routes.restricted;
-  const unrestricted = routes.unrestricted;
-
-  let found = restricted.find((route) => route.path === path);
-  found = !found ? unrestricted.find((route) => route.path === path) : found;
-
-  if (found) {
-    let meta = found.meta;
-
-    return [
-      <title>{meta.title}</title>,
-      <meta name="description" content={meta.description} />,
-      <meta property="og:title" content={meta.title} />,
-      <meta property="og:description" content={meta.description} />,
-    ];
-  } else {
-    console.log("Invalid path");
-    return [];
-  }
+const generateMeta = (meta) => {
+  return (
+    <Helmet>
+      <title>{meta.title}</title>
+      <meta name="description" content={meta.description} />
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:description" content={meta.description} />
+    </Helmet>
+  );
 };
 
 export { routes as default, generateMeta };

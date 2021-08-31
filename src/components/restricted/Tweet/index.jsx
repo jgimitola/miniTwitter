@@ -1,14 +1,11 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-import { generateMeta } from "../../../lib/routes";
-
-const Tweet = () => {
-  const meta = generateMeta("/tweets/:id");
+const Tweet = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <h1>Tweet title</h1>
       <h2>

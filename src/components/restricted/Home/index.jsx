@@ -1,14 +1,11 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-import { generateMeta } from "../../../lib/routes";
-
-const Home = () => {
-  const meta = generateMeta("/home");
+const Home = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <h1>Home</h1>
       <form action="#">

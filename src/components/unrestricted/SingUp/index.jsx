@@ -1,14 +1,11 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-import { generateMeta } from "../../../lib/routes";
-
-const SingUp = () => {
-  const meta = generateMeta("/signup");
+const SingUp = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <h1>Create your account</h1>
       <form action="#">

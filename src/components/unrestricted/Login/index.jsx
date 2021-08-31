@@ -1,14 +1,11 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-import { generateMeta } from "../../../lib/routes";
-
-const Login = () => {
-  const meta = generateMeta("/login");
+const Login = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <h1>Log In to MiniTwitter</h1>
       <form action="#">

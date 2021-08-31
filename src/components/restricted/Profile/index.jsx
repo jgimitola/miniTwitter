@@ -1,13 +1,9 @@
-import { Helmet } from "react-helmet";
-
-import { generateMeta } from "../../../lib/routes";
-
-const Profile = () => {
-  const meta = generateMeta("/profile");
+const Profile = (props) => {
+  const meta = props.meta;
 
   return (
     <div>
-      <Helmet>{meta}</Helmet>
+      {meta}
 
       <img
         src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
