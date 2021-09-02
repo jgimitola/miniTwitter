@@ -1,9 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "./App.css";
-
 import routes, { generateMeta } from "./lib/routes";
-import Nav from "./components/unrestricted/Nav";
+import GlobalStyles from "./lib/ui/GlobalStyle";
 
 const App = () => {
   const { unrestricted, restricted } = routes;
@@ -11,20 +9,22 @@ const App = () => {
   return (
     <main>
       <BrowserRouter>
-        <Nav />
+        <GlobalStyles />
         <Switch>
           {unrestricted.map(({ path, Component, meta }) => (
             <Route
               exact
+              key={path}
               path={path}
-              render={() => <Component meta={generateMeta(meta)} />}
+              render={(props) => <Component meta={generateMeta(meta)} />}
             />
           ))}
           {restricted.map(({ path, Component, meta }) => (
             <Route
               exact
+              key={path}
               path={path}
-              render={() => <Component meta={generateMeta(meta)} />}
+              render={(props) => <Component meta={generateMeta(meta)} />}
             />
           ))}
         </Switch>
