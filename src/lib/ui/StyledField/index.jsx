@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { label_gray, border_gray } from "../colors";
 
 const Input = styled.input.attrs(() => ({
-    required: true,
-  }))`
-  font-size: 14px;
+  required: true,
+}))`
+  font-size: 0.875rem;
   padding: 1em 1.3em;
   display: block;
   min-width: 21em;
@@ -19,18 +19,15 @@ const Input = styled.input.attrs(() => ({
 
 const Label = styled.label`
   color: ${label_gray};
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 16px;
+
+  line-height: 1rem;
   position: absolute;
   pointer-events: none;
   left: 10px;
   top: 32px;
   transition: 0.2s ease all;
   input:focus ~ &,
-  input:not(:placeholder-shown).input:not(:focus) ~ .label,  
+  input:not(:placeholder-shown).input:not(:focus) ~ .label,
   input:valid ~ & {
     top: -5px;
     left: 0px;
@@ -38,16 +35,17 @@ const Label = styled.label`
     color: ${label_gray};
   }
 `;
+
 const Container = styled.div`
   position: relative;
   min-width: 21em;
   padding: 1em 0;
-  
 `;
-const StyledInput = {
+
+const StyledField = {
   Container,
   Input,
   Label,
 };
 
-export default StyledInput;
+export default StyledField;

@@ -4,8 +4,7 @@ const GlobalStyle = createGlobalStyle`
 
 html {
     font-family: Roboto, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 16px;    
 }
 
 body {
@@ -13,24 +12,24 @@ body {
     padding: 0;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-weight: 700;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 h4 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
 }
 `;
