@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { primary, gray } from "../colors";
 
-const Button = styled.button`
+const StyledButton = styled.button`
   padding: 1em 0;
   min-width: 21em;
 
@@ -49,4 +49,4 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default Button;
+export default StyledButton;

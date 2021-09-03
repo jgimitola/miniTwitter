@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 
-import Button from "../../../lib/ui/Button";
-import TwitterLogo from "../../../lib/ui/TwitterLogo";
-import Suggestion from "../../../lib/ui/Suggestion";
-import Container from "../../../lib/ui/Container";
-import Row from "../../../lib/ui/Row";
-import FormContainer from "../../../lib/ui/FormContainer";
+import Button from "../../common/Button";
+import TwitterLogo from "../../common/TwitterLogo";
+import Suggestion from "../../common/Suggestion";
+import { Container, Row, FormContainer } from "./styled";
 
 const Root = (props) => {
   const meta = props.meta;
