@@ -1,29 +1,38 @@
 import { Link } from "react-router-dom";
-
+import FloatingInput from "../../common/FloatingInput";
+import Suggestion from "../../common/Suggestion";
+import TwitterLogo from "../../common/TwitterLogo";
+import Button from "../../common/Button";
+import {Container} from "./styled"
 const Login = (props) => {
   const meta = props.meta;
 
   return (
-    <div>
+    <Container>
+      <div>
       {meta}
-
-      <h1>Log In to MiniTwitter</h1>
+      <TwitterLogo size="sm" />
+      <h4>My MiniTwitter</h4>
+      <h1>Login to your account</h1>
       <form action="#">
-        <label htmlFor="userField">User:</label>
-        <input id="userField" type="text" />
-
-        <label htmlFor="passwordField">Password:</label>
-        <input id="passwordField" type="password" />
+        <FloatingInput
+          inputType="text"
+          inputId="userField"
+          labelText="Email or Username"
+        />
+        <FloatingInput
+          inputType="password"
+          inputId="passwordField"
+          labelText="Password"
+        />
 
         <Link to="/home">
-          <input type="submit" value="Sign In" />
+          <Button primary>Login now</Button>
         </Link>
       </form>
-      <p>
-        Don't have an account yet? <Link to="/signup">Sign Up</Link>
-      </p>
-      <Link to="/passwordrecovery">Forgot yor password? </Link>
+      <Suggestion label="" linkText="Forgot password?" linkTo="/signup" />
     </div>
+    </Container>
   );
 };
 

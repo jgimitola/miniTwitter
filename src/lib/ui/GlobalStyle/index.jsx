@@ -31,6 +31,7 @@ h3 {
 
 h4 {
     font-size: 16px;
+    font-weight: 400;
 }
 `;
 
