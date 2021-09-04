@@ -14,12 +14,12 @@ const Root = (props) => {
 
       <Row>
         <Container backgroundColor="blue">
-          <TwitterLogo size="lg" white />
+          <TwitterLogo size="lg" variant="white" titleDisplay="none" />
         </Container>
 
         <Container>
           <FormContainer>
-            <TwitterLogo size="sm" />
+            <TwitterLogo size="sm" titleDisplay="none"/>
 
             <h1>Welcome to MiniTwitter</h1>
 

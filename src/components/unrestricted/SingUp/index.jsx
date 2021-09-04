@@ -1,29 +1,61 @@
-import { Link } from "react-router-dom";
+import TwitterLogo from "../../common/TwitterLogo";
+import Field from "../../common/Field";
+import Button from "../../common/Button";
+import Suggestion from "../../common/Suggestion";
+import { Container } from "./styled";
 
 const SingUp = (props) => {
   const meta = props.meta;
 
   return (
-    <div>
+    <Container>
       {meta}
 
-      <h1>Create your account</h1>
-      <form action="#">
-        <label htmlFor="ca-usernameField">Username:</label>
-        <input id="ca-usernameField" type="text" />
+      <div>
+        <TwitterLogo size="sm" />
 
-        <label htmlFor="ca-passwordField">Password:</label>
-        <input id="ca-passwordField" type="password" />
+        <h1>Create your account</h1>
 
-        <label htmlFor="ca-dateField">Date of birth:</label>
-        <input id="ca-dateField" type="date" />
+        <form action="#">
+          <Field
+            labelText={"Name"}
+            inputType={"text"}
+            inputId={"ca-nameField"}
+          />
 
-        <input type="submit" value="Sign Up" />
-      </form>
-      <p>
-        Have an account already? <Link to="/login">Log In</Link>
-      </p>
-    </div>
+          <Field
+            labelText={"Username"}
+            inputType={"text"}
+            inputId={"ca-usernameField"}
+          />
+
+          <Field
+            labelText={"Email"}
+            inputType={"email"}
+            inputId={"ca-emailField"}
+          />
+
+          <Field
+            labelText={"Password"}
+            inputType={"password"}
+            inputId={"ca-passwordField"}
+          />
+
+          <Field
+            labelText={"Password Confirmation"}
+            inputType={"password"}
+            inputId={"ca-passwordConfirmationField"}
+          />
+        </form>
+
+        <Button primary> Sign Up</Button>
+      </div>
+      <Suggestion
+        label="Already have an account ?"
+        linkText="Log In"
+        linkTo="/login"
+      />
+    </Container>
   );
 };
 

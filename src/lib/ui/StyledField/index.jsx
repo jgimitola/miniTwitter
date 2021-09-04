@@ -46,7 +46,7 @@ const Field = ({ className, labelText, inputType, inputId }) => {
   return (
     <Container className={className}>
       <Input type={inputType} id={inputId} />
-      <Label for={inputId}>{labelText}</Label>
+      <Label htmlFor={inputId}>{labelText}</Label>
     </Container>
   );
 };

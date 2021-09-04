@@ -31,7 +31,7 @@ export const Row = styled.div`
 
   ${Container}:first-child ${StyledTwitterLogo} {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 100%;    
   }
 
   @media (max-width: 768px) {
@@ -47,8 +47,7 @@ export const Row = styled.div`
 
 export const FormContainer = styled.div`
   ${StyledTwitterLogo} {
-    display: block;
-    margin: 0 auto;
+    text-align: center;
   }
 
   ${StyledSuggestion} {

@@ -13,7 +13,7 @@ const PasswordRecovery = (props) => {
         {meta}
 
         <TwitterLogo size="sm" />
-        <h4>MiniTwitter</h4>
+
         <h1>Recover your password</h1>
 
         <Field

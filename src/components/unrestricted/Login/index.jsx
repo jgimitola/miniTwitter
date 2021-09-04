@@ -16,7 +16,6 @@ const Login = (props) => {
 
         <TwitterLogo size="sm" />
 
-        <h4>MiniTwitter</h4>
         <h1>Login to your account</h1>
 
         <form action="#">
