@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { primary } from "../../../lib/ui/colors";
 import StyledTwitterLogo from "../../../lib/ui/StyledTwitterLogo";
+import StyledSuggestion from "../../../lib/ui/StyledSuggestion";
 
 export const Container = styled.div`
   display: flex;
@@ -9,11 +10,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  ${(props) => {
-    if (props.backgroundColor === "blue") {
-      return `background-color: ${primary}`;
-    }
-  }};
+  ${(props) =>
+    props.backgroundColor === "blue" &&
+    css`
+      background-color: ${primary};
+    `}
 
   width: 50vw;
   height: 100vh;
@@ -45,8 +46,12 @@ export const Row = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  & ${StyledTwitterLogo} {
+  ${StyledTwitterLogo} {
     display: block;
     margin: 0 auto;
+  }
+
+  ${StyledSuggestion} {
+    margin-top: 2rem;
   }
 `;

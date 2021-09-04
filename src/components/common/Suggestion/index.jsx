@@ -1,15 +1,10 @@
 import StyledSuggestion from "../../../lib/ui/StyledSuggestion";
 
-const { Container, StyledP, StyledLink } = StyledSuggestion;
-
-const Suggestion = (props) => {
-  const { label, linkText, linkTo } = props;
+const Suggestion = ({ className, children, ...rest }) => {
   return (
-    <Container>
-      <StyledP>
-        {label} <StyledLink to={linkTo}>{linkText}</StyledLink>
-      </StyledP>
-    </Container>
+    <StyledSuggestion className={className} {...rest}>
+      {children}
+    </StyledSuggestion>
   );
 };
 export default Suggestion;

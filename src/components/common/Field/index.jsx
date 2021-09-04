@@ -1,16 +1,7 @@
 import StyledField from "../../../lib/ui/StyledField";
 
-const { Container, Input, Label } = StyledField;
-
-const Field = (props) => {
-  const { labelText, inputType, inputId } = props;
-
-  return (
-    <Container>
-      <Input type={inputType} id={inputId} />
-      <Label for={inputId}>{labelText}</Label>
-    </Container>
-  );
+const Field = ({ className, ...rest }) => {
+  return <StyledField className={className} {...rest} />;
 };
 
 export default Field;

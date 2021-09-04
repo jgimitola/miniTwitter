@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { primary } from "../../../lib/ui/colors";
+import StyledSuggestion from "../../../lib/ui/StyledSuggestion";
 
 export const Container = styled.div`
   display: flex;
@@ -8,12 +8,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  ${(props) => {
-    if (props.backgroundColor === "blue") {
-      return `background-color: ${primary}`;
-    }
-  }};
-
   width: 100vw;
   height: 100vh;
+
+  ${StyledSuggestion}:last-child {
+    margin-top: 2rem;
+  }
 `;

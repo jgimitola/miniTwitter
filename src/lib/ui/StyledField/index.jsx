@@ -42,10 +42,15 @@ const Container = styled.div`
   padding: 1em 0;
 `;
 
-const StyledField = {
-  Container,
-  Input,
-  Label,
+const Field = ({ className, labelText, inputType, inputId }) => {
+  return (
+    <Container className={className}>
+      <Input type={inputType} id={inputId} />
+      <Label for={inputId}>{labelText}</Label>
+    </Container>
+  );
 };
+
+const StyledField = styled(Field)``;
 
 export default StyledField;

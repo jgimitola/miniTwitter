@@ -12,16 +12,14 @@ const StyledP = styled.p`
   color: ${paragraph_gray};
 `;
 
-const Container = styled.div`
-  & ${StyledP} {
-    margin-top: 2rem;
-  }
-`;
-
-const StyledSuggestion = {
-  StyledLink,
-  StyledP,
-  Container,
+const Suggestion = ({ className, label, linkText, linkTo }) => {
+  return (
+    <StyledP className={className}>
+      {label} <StyledLink to={linkTo}>{linkText}</StyledLink>
+    </StyledP>
+  );
 };
+
+const StyledSuggestion = styled(Suggestion)``;
 
 export default StyledSuggestion;
