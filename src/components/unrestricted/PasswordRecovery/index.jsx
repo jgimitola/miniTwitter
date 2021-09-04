@@ -1,19 +1,38 @@
+import Field from "../../common/Field";
+import Suggestion from "../../common/Suggestion";
+import TwitterLogo from "../../common/TwitterLogo";
+import Button from "../../common/Button";
+import {Container,FormContainer} from "./styled";
+
 const PasswordRecovery = (props) => {
   const meta = props.meta;
 
   return (
-    <div>
-      {meta}
+    <Container>
+      <div>
+        {meta}
+        <TwitterLogo size="sm"/>
+        <h4>MiniTwitter</h4>
+        <h1>Recover your password</h1>
 
-      <h1>Find your Twitter account</h1>
-      <label for="pr-emailField">
-        Enter your email, phone number, or username.
-      </label>
-      <form action="#">
-        <input id="pr-emailField" type="email" />
-        <button>Search</button>
-      </form>
-    </div>
+        <Field
+          inputType="text"
+          inputId="userField"
+          labelText="Email or Username"
+        />
+
+        <Button primary>Recover your password</Button>
+
+       <FormContainer>
+          <Suggestion 
+            label="Return to "
+            linkText="Login"
+            linkTo="/Login"
+          /> 
+       </FormContainer>
+        
+      </div>
+    </Container>  
   );
 };
 
