@@ -1,16 +1,20 @@
+import { Helmet } from "react-helmet";
+
 import Root from "../components/unrestricted/Root";
 import Login from "../components/unrestricted/Login";
 import SignUp from "../components/unrestricted/SingUp";
 import PasswordRecovery from "../components/unrestricted/PasswordRecovery";
-
 import Home from "../components/restricted/Home";
 import Profile from "../components/restricted/Profile";
 import Tweet from "../components/restricted/Tweet";
 import SearchResult from "../components/restricted/SearchResult";
 import Timeline from "../components/restricted/Timeline";
 import Trend from "../components/restricted/Trend";
-import { Helmet } from "react-helmet";
-
+import Explorer from "../components/restricted/Explorer";
+import Notifications from "../components/restricted/Notifications";
+import Messages from "../components/restricted/Messages";
+import Bookmarks from "../components/restricted/Bookmarks";
+import List from "../components/restricted/List";
 const routes = {
   unrestricted: [
     {
@@ -104,6 +108,51 @@ const routes = {
       meta: {
         title: "MiniTwitter - Trending",
         description: "Topic is trending on MiniTwitter, take a look",
+      },
+    },
+    {
+      text: "Explore",
+      path: "/explore",
+      Component: Explorer,
+      meta: {
+        title: "MiniTwitter - Explore",
+        description: "Explore new things in MiniTwitter",
+      },
+    },
+    {
+      text: "Notifications",
+      path: "/notifications",
+      Component: Notifications,
+      meta: {
+        title: "MiniTwitter - Notifications",
+        description: "Take a look at your new notifications",
+      },
+    },
+    {
+      text: "Messages",
+      path: "/messages",
+      Component: Messages,
+      meta: {
+        title: "MiniTwitter - Messages",
+        description: "Chat with your contacts using MiniTwitter",
+      },
+    },
+    {
+      text: "Bookmarks",
+      path: "/bookmarks",
+      Component: Bookmarks,
+      meta: {
+        title: "MiniTwitter - Bookmarks",
+        description: "Save your favorite items and they will appear here",
+      },
+    },
+    {
+      text: "List",
+      path: "/list",
+      Component: List,
+      meta: {
+        title: "MiniTwitter - List",
+        description: "Pin your favorite lists to access them quickly",
       },
     },
   ],

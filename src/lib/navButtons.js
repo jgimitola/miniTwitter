@@ -46,7 +46,7 @@ const navButtons = [
   {
     SvgIcon: MoreIcon,
     buttonLabel: "More",
-    linkTo: "/more",
+    linkTo: "/home",
   },
 ];
 

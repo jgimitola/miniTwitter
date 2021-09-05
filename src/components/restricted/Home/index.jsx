@@ -1,12 +1,14 @@
 import Nav from "../Nav";
+import { Container } from "./styled";
 const Home = (props) => {
   const meta = props.meta;
 
   return (
-    <div>
+    <Container>
       {meta}
       <Nav />
-    </div>
+      <aside>Hola</aside>
+    </Container>
   );
 };
 

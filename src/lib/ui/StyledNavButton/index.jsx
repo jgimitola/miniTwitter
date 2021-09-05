@@ -5,7 +5,7 @@ import { primary, labelNav_black, navButtonsHover_gray } from "../colors";
 
 const StyledLink = styled(Link)`
   font-weight: normal;
-  font-size: 22px;
+  font-size: 20px;
   text-decoration: none;
   color: ${labelNav_black};
 

@@ -1,11 +1,12 @@
-
+import Nav from "../Nav";
 
 const Timeline = () => {
-    return (
-        <div>
-            <h1>Timeline</h1>
-        </div>
-    );
+  return (
+    <>
+      <Nav />
+      <h1>Timeline</h1>
+    </>
+  );
 };
 
 export default Timeline;
