@@ -2,7 +2,7 @@ import TwitterLogo from "../../common/TwitterLogo";
 import Field from "../../common/Field";
 import Button from "../../common/Button";
 import Suggestion from "../../common/Suggestion";
-import { Container } from "./styled";
+import { Container, FormContainer } from "./styled";
 
 const SingUp = (props) => {
   const meta = props.meta;
@@ -11,7 +11,7 @@ const SingUp = (props) => {
     <Container>
       {meta}
 
-      <div>
+      <FormContainer>
         <TwitterLogo size="sm" />
 
         <h1>Create your account</h1>
@@ -49,7 +49,7 @@ const SingUp = (props) => {
         </form>
 
         <Button primary> Sign Up</Button>
-      </div>
+      </FormContainer>
       <Suggestion
         label="Already have an account ?"
         linkText="Log In"

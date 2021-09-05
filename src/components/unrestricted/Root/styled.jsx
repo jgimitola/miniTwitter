@@ -17,7 +17,7 @@ export const Container = styled.div`
     `}
 
   width: 50vw;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 export const Row = styled.div`
@@ -34,6 +34,8 @@ export const Row = styled.div`
     max-height: 100%;    
   }
 
+  
+  
   @media (max-width: 768px) {
     ${Container} {
       width: 100%;

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import Nav from "../Nav"
 const Home = (props) => {
   const meta = props.meta;
 
@@ -8,7 +8,9 @@ const Home = (props) => {
       {meta}
 
       <h1>Home</h1>
+      <Nav />
       <form action="#">
+
         <input type="search" name="searchbar" id="searchbar" />
         <Link to="/search/results">
           <button>Search</button>

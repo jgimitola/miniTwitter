@@ -8,9 +8,13 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  height: 100vh;
+  min-height: 100vh;
 
   ${StyledSuggestion} {
     margin-top: 2rem;
   }
+`;
+
+export const FormContainer = styled.div`
+  margin-top: 2rem;
 `;
