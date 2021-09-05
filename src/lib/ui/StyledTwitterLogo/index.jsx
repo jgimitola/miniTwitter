@@ -13,7 +13,15 @@ const Title = styled.h4`
 
 const Icon = styled(TwitterIcon)`
   width: ${({ size }) => {
-    return size === "sm" ? "64px" : "512px";
+    if (size === "sm") {
+      return "64px";
+    } else {
+      if (size === "lg") {
+        return "512px";
+      } else {
+        return "30px";
+      }
+    }
   }};
   height: auto;
   fill: ${({ variant }) => {

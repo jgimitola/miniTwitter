@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-    min-height: 1rem;
+export const Container = styled.nav`
+  & ul {
+    list-style: none;
+  }
 `;

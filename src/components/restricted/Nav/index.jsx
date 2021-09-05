@@ -1,12 +1,25 @@
-import NavButton from "../../common/NavButton"
-import {Container} from "./styled";
+import NavButton from "../../common/NavButton";
+import navButtons from "../../../lib/navButtons";
+import TwitterLogo from "../../common/TwitterLogo";
+import { Container } from "./styled";
 const Nav = () => {
-    return(
-        <Container>
-            <NavButton buttonLabel="Home" linkTo="/home"/>
-            <NavButton buttonLabel="Profile" linkTo="/profile"/>
-
-        </Container>
-    );
+  return (
+    <Container>
+      <ul>
+        <TwitterLogo size="xs" titleDisplay="none" />
+        {navButtons.map(({ SvgIcon, buttonLabel, linkTo }) => {
+          return (
+            <li>
+              <NavButton
+                SvgIcon={SvgIcon}
+                buttonLabel={buttonLabel}
+                linkTo={linkTo}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </Container>
+  );
 };
 export default Nav;
