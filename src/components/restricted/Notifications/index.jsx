@@ -1,7 +1,7 @@
 import Page from "../../common/Page";
 
-const Messages = () => {
-  return <Page title="Notifications"></Page>;
+const Notifications = ({ meta }) => {
+  return <Page title="Notifications">{meta}</Page>;
 };
 
-export default Messages;
+export default Notifications;

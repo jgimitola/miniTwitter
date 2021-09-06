@@ -1,6 +1,4 @@
-const Trend = (props) => {
-  const meta = props.meta;
-
+const Trend = ({ meta }) => {
   return (
     <>
       {meta}
