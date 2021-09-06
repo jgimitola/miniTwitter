@@ -1,5 +1,8 @@
 import Nav from "../Nav";
 import { Container } from "./styled";
+import { SearchContainer, SearchInput, IconButton } from "./SearchBar";
+import { ReactComponent as SearchIcon } from "../../../images/search.svg";
+
 const Home = (props) => {
   const meta = props.meta;
 
@@ -7,7 +10,12 @@ const Home = (props) => {
     <Container>
       {meta}
       <Nav />
-      <aside>Hola</aside>
+      <SearchContainer>
+        <IconButton>
+          <SearchIcon />
+        </IconButton>
+        <SearchInput />
+      </SearchContainer>
     </Container>
   );
 };
