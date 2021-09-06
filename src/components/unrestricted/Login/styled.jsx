@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
 import StyledSuggestion from "../../../lib/ui/StyledSuggestion";
+import WrapperMixin from "../../../lib/ui/WrapperMixin";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 100vw;
-  min-height: 100vh;
+export const Main = styled.main`
+  ${WrapperMixin({ flexDirection: "column", width: "100vw" })}
 
   ${StyledSuggestion}:last-child {
+    margin-top: 2rem;
+  }
+
+  & > div {
     margin-top: 2rem;
   }
 `;

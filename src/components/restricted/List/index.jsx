@@ -1,10 +1,7 @@
-import Nav from "../Nav";
-const Explorer = () => {
-  return (
-    <>
-      <Nav />
-      <h1>Explore</h1>
-    </>
-  );
+import Page from "../../common/Page";
+
+const List = () => {
+  return <Page title="List"></Page>;
 };
-export default Explorer;
+
+export default List;

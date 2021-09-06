@@ -1,23 +1,7 @@
-import Nav from "../Nav";
-import { Container } from "./styled";
-import { SearchContainer, SearchInput, IconButton } from "./SearchBar";
-import { ReactComponent as SearchIcon } from "../../../images/search.svg";
+import Page from "../../common/Page";
 
-const Home = (props) => {
-  const meta = props.meta;
-
-  return (
-    <Container>
-      {meta}
-      <Nav />
-      <SearchContainer>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-        <SearchInput />
-      </SearchContainer>
-    </Container>
-  );
+const Home = ({ meta }) => {
+  return <Page title="Home">{meta}</Page>;
 };
 
 export default Home;

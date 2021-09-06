@@ -1,49 +1,47 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { primary, labelNav_black, navButtonsHover_gray } from "../colors";
+import { primary, labelNav_black } from "../colors";
 
-const StyledLink = styled(Link)`
-  font-weight: normal;
-  font-size: 20px;
+const SidebarButton = styled(Link)`
   text-decoration: none;
   color: ${labelNav_black};
 
-  display: inline-block;
-  & svg {
-    margin-right: 1rem;
-  }
-
-  &:focus {
-    color: ${primary};
-    font-weight: bold;
-  }
-
-  &:focus svg {
-    fill: ${primary};
-    stroke: ${primary};
-  }
-`;
-
-const Container = styled.div`
-  border-radius: 100px;
-  padding: 0.7rem 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  cursor: pointer;
+
   &:hover {
-    background-color: ${navButtonsHover_gray};
+    background-color: #e8f5fe;
+    border-radius: 30px;
+    color: ${primary};
+    transition: color 100ms ease-out;
+  }
+
+  & svg {
+    padding: 20px;
+  }
+
+  & h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+
+  @media (max-width: 768px) {
+    & > h2 {
+      display: none;
+    }
+    justify-content: center;
   }
 `;
 
 const Button = ({ className, SvgIcon, buttonLabel, linkTo }) => {
   return (
-    <StyledLink to={linkTo}>
-      <Container className={className}>
-        <SvgIcon />
-        {buttonLabel}
-      </Container>
-    </StyledLink>
+    <SidebarButton className={className} to={linkTo}>
+      <SvgIcon />
+      <h2>{buttonLabel}</h2>
+    </SidebarButton>
   );
 };
 

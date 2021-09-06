@@ -3,45 +3,41 @@ import styled, { css } from "styled-components";
 import { primary } from "../../../lib/ui/colors";
 import StyledTwitterLogo from "../../../lib/ui/StyledTwitterLogo";
 import StyledSuggestion from "../../../lib/ui/StyledSuggestion";
+import WrapperMixin from "../../../lib/ui/WrapperMixin";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+export const Wrapper = styled.div`
+  ${WrapperMixin({
+    flexDirection: "row",
+    width: "50vw",
+  })}
 
   ${(props) =>
     props.backgroundColor === "blue" &&
     css`
       background-color: ${primary};
     `}
-
-  width: 50vw;
-  min-height: 100vh;
 `;
 
-export const Row = styled.div`
+export const Main = styled.main`
   display: flex;
 
-  ${Container}:first-child {
+  ${Wrapper}:first-child {
     box-sizing: border-box;
     padding-left: 5rem;
     padding-right: 5rem;
   }
 
-  ${Container}:first-child ${StyledTwitterLogo} {
+  ${Wrapper}:first-child ${StyledTwitterLogo} {
     max-width: 100%;
-    max-height: 100%;    
+    max-height: 100%;
   }
 
-  
-  
   @media (max-width: 768px) {
-    ${Container} {
+    ${Wrapper} {
       width: 100%;
     }
 
-    ${Container}:first-child {
+    ${Wrapper}:first-child {
       display: none;
     }
   }

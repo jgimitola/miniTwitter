@@ -1,10 +1,7 @@
-import Nav from "../Nav";
+import Page from "../../common/Page";
+
 const Bookmarks = () => {
-  return (
-    <>
-      <Nav />
-      <h1>Bookmarks</h1>
-    </>
-  );
+  return <Page title="Bookmarks"></Page>;
 };
+
 export default Bookmarks;

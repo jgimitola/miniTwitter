@@ -1,10 +1,7 @@
-import Nav from "../Nav";
+import Page from "../../common/Page";
+
 const Messages = () => {
-  return (
-    <>
-      <Nav />
-      <h1>Messages</h1>
-    </>
-  );
+  return <Page title="Messages"></Page>;
 };
+
 export default Messages;

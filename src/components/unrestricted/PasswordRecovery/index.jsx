@@ -2,30 +2,29 @@ import Field from "../../common/Field";
 import Suggestion from "../../common/Suggestion";
 import TwitterLogo from "../../common/TwitterLogo";
 import Button from "../../common/Button";
-import { Container } from "./styled";
+import { Main } from "./styled";
 
-const PasswordRecovery = (props) => {
-  const meta = props.meta;
-
+const PasswordRecovery = ({ meta }) => {
   return (
-    <Container>
-      <div>
-        {meta}
+    <>
+      {meta}
+      <Main>
+        <div>
+          <TwitterLogo size="sm" />
 
-        <TwitterLogo size="sm" />
+          <h1>Recover your password</h1>
 
-        <h1>Recover your password</h1>
+          <Field
+            inputType="text"
+            inputId="userField"
+            labelText="Email or Username"
+          />
 
-        <Field
-          inputType="text"
-          inputId="userField"
-          labelText="Email or Username"
-        />
-
-        <Button primary>Recover your password</Button>
-      </div>
-      <Suggestion label="Return to " linkText="Login" linkTo="/login" />
-    </Container>
+          <Button primary>Recover your password</Button>
+        </div>
+        <Suggestion label="Return to " linkText="Login" linkTo="/login" />
+      </Main>
+    </>
   );
 };
 

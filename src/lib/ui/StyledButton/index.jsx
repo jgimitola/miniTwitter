@@ -3,11 +3,10 @@ import styled, { css } from "styled-components";
 import { primary, gray } from "../colors";
 
 const StyledButton = styled.button`
-  padding: 1em 0;
-  min-width: 21em;
-
   font-size: 1rem;
   font-weight: 700;
+  padding: 1em 2em;
+  width: 100%;
 
   ${(props) =>
     props.primary &&

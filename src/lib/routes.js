@@ -15,6 +15,7 @@ import Notifications from "../components/restricted/Notifications";
 import Messages from "../components/restricted/Messages";
 import Bookmarks from "../components/restricted/Bookmarks";
 import List from "../components/restricted/List";
+
 const routes = {
   unrestricted: [
     {

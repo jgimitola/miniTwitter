@@ -3,23 +3,20 @@ import { Link } from "react-router-dom";
 import Button from "../../common/Button";
 import TwitterLogo from "../../common/TwitterLogo";
 import Suggestion from "../../common/Suggestion";
-import { Container, Row, FormContainer } from "./styled";
+import { Wrapper, Main, FormContainer } from "./styled";
 
-const Root = (props) => {
-  const meta = props.meta;
-
+const Root = ({ meta }) => {
   return (
-    <div>
+    <>
       {meta}
-
-      <Row>
-        <Container backgroundColor="blue">
+      <Main>
+        <Wrapper backgroundColor="blue">
           <TwitterLogo size="lg" variant="white" titleDisplay="none" />
-        </Container>
+        </Wrapper>
 
-        <Container>
+        <Wrapper>
           <FormContainer>
-            <TwitterLogo size="sm" titleDisplay="none"/>
+            <TwitterLogo size="sm" titleDisplay="none" />
 
             <h1>Welcome to MiniTwitter</h1>
 
@@ -37,9 +34,9 @@ const Root = (props) => {
               <Button white>Sign Up</Button>
             </Link>
           </FormContainer>
-        </Container>
-      </Row>
-    </div>
+        </Wrapper>
+      </Main>
+    </>
   );
 };
 

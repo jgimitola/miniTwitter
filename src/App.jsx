@@ -7,29 +7,27 @@ const App = () => {
   const { unrestricted, restricted } = routes;
 
   return (
-    <main>
-      <BrowserRouter>
-        <GlobalStyles />
-        <Switch>
-          {unrestricted.map(({ path, Component, meta }) => (
-            <Route
-              exact
-              key={path}
-              path={path}
-              render={(props) => <Component meta={generateMeta(meta)} />}
-            />
-          ))}
-          {restricted.map(({ path, Component, meta }) => (
-            <Route
-              exact
-              key={path}
-              path={path}
-              render={(props) => <Component meta={generateMeta(meta)} />}
-            />
-          ))}
-        </Switch>
-      </BrowserRouter>
-    </main>
+    <BrowserRouter>
+      <GlobalStyles />
+      <Switch>
+        {unrestricted.map(({ path, Component, meta }) => (
+          <Route
+            exact
+            key={path}
+            path={path}
+            render={(props) => <Component meta={generateMeta(meta)} />}
+          />
+        ))}
+        {restricted.map(({ path, Component, meta }) => (
+          <Route
+            exact
+            key={path}
+            path={path}
+            render={(props) => <Component meta={generateMeta(meta)} />}
+          />
+        ))}
+      </Switch>
+    </BrowserRouter>
   );
 };
 

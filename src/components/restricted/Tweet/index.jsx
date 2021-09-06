@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Tweet = (props) => {
-  const meta = props.meta;
-
+const Tweet = ({ meta }) => {
   return (
     <div>
       {meta}

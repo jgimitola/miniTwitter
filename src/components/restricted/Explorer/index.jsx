@@ -1,10 +1,6 @@
-import Nav from "../Nav";
+import Page from "../../common/Page";
+
 const Explorer = () => {
-  return (
-    <>
-      <Nav />
-      <h1>Explore</h1>
-    </>
-  );
+  return <Page title="Explore"></Page>;
 };
 export default Explorer;
