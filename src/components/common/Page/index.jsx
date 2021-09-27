@@ -2,15 +2,16 @@ import Nav from "../Nav";
 import Aside from "../Aside";
 import { Wrapper, Main, Header } from "./styled";
 
-const Page = ({ children, title }) => {
+const Page = ({ children, title, meta }) => {
   return (
     <>
-      {children}
+      {meta}
       <Wrapper>
         <Nav />
 
         <Main>
           <Header>{title}</Header>
+          {children}
         </Main>
 
         <Aside />

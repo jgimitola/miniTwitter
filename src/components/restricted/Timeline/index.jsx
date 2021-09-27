@@ -1,9 +1,11 @@
+import Tweets from "../Tweets";
+
 const Timeline = () => {
-  return (
-    <>
-      <h1>Timeline</h1>
-    </>
-  );
-};
+    return (
+        <>
+            <Tweets />
+        </>
+    );
+}
 
 export default Timeline;
