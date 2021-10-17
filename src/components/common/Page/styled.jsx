@@ -16,6 +16,7 @@ export const Main = styled.main`
   flex: 0.4;
   border-right: 1px solid ${border_gray};
   min-width: fit-content;
+  max-width: 600px;
   overflow-y: scroll;
 
   -ms-overflow-style: none;

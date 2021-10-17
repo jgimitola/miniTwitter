@@ -5,5 +5,6 @@ export const black = "#000000";
 export const paragraph_gray = "#616161";
 export const label_gray = "#4A5568";
 export const labelNav_black = "#333333";
-export const navButtonsHover_gray ="#e4e4ec";
+export const navButtonsHover_gray = "#e4e4ec";
 export const border_gray = "#E8E8E8";
+export const tweetcard_gray = "#828282";

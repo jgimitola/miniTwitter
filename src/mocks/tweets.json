@@ -1,74 +1,83 @@
 [
-    {
+  {
+    "id": "1",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis id velit nec feugiat. Fusce.",
+    "user": {
+      "name": "Jesús Estrada",
+      "username": "jestrade"
+    },
+    "date": "XXXXX",
+    "likes": 10,
+    "retweets": 10,
+    "comments": [
+      {
         "id": "1",
         "content": "Hola mundo",
         "user": {
-            "username": "jestrade"
+          "username": "jestrade"
         },
-        "date": "XXXXX",
-        "likes": 10,
-        "retweets": 10,
-        "comments": [{
-            "id": "1",
-            "content": "Hola mundo",
-            "user": {
-                "username": "jestrade"
-            },
-            "date": "XXXXX"
-        }]
+        "date": "XXXXX"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "content": "Hola mundo 2",
+    "user": {
+      "username": "jestrade"
     },
-    {
-        "id": "2",
-        "content": "Hola mundo 2",
+    "date": "XXXXX",
+    "likes": 10,
+    "retweets": 10,
+    "comments": [
+      {
+        "id": "1",
+        "content": "Hola mundo",
         "user": {
-            "username": "jestrade"
+          "username": "jestrade"
         },
-        "date": "XXXXX",
-        "likes": 10,
-        "retweets": 10,
-        "comments": [{
-            "id": "1",
-            "content": "Hola mundo",
-            "user": {
-                "username": "jestrade"
-            },
-            "date": "XXXXX"
-        }]
+        "date": "XXXXX"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "content": "Hola mundo 3",
+    "user": {
+      "username": "jestrade"
     },
-    {
-        "id": "3",
-        "content": "Hola mundo 3",
+    "date": "XXXXX",
+    "likes": 10,
+    "retweets": 10,
+    "comments": [
+      {
+        "id": "1",
+        "content": "Hola mundo",
         "user": {
-            "username": "jestrade"
+          "username": "jestrade"
         },
-        "date": "XXXXX",
-        "likes": 10,
-        "retweets": 10,
-        "comments": [{
-            "id": "1",
-            "content": "Hola mundo",
-            "user": {
-                "username": "jestrade"
-            },
-            "date": "XXXXX"
-        }]
+        "date": "XXXXX"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "content": "Hola mundo 4",
+    "user": {
+      "username": "jestrade"
     },
-    {
-        "id": "4",
-        "content": "Hola mundo 4",
+    "date": "XXXXX",
+    "likes": 10,
+    "retweets": 10,
+    "comments": [
+      {
+        "id": "1",
+        "content": "Hola mundo",
         "user": {
-            "username": "jestrade"
+          "username": "jestrade"
         },
-        "date": "XXXXX",
-        "likes": 10,
-        "retweets": 10,
-        "comments": [{
-            "id": "1",
-            "content": "Hola mundo",
-            "user": {
-                "username": "jestrade"
-            },
-            "date": "XXXXX"
-        }]
-    }
+        "date": "XXXXX"
+      }
+    ]
+  }
 ]
