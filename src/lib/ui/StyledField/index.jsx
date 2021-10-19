@@ -42,10 +42,10 @@ const Container = styled.div`
   padding: 1em 0;
 `;
 
-const Field = ({ className, labelText, inputType, inputId }) => {
+const Field = ({ className, labelText, inputType, inputId, state, setState}) => {
   return (
     <Container className={className}>
-      <Input type={inputType} id={inputId} />
+      <Input type={inputType} id={inputId} value={state} onChange={event=>setState(event.target.value)}/>
       <Label htmlFor={inputId}>{labelText}</Label>
     </Container>
   );
