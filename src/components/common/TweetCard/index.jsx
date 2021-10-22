@@ -1,6 +1,5 @@
 import {
   Container,
-  PictureContainer,
   ContentContainer,
   Header,
   Content,
@@ -9,6 +8,7 @@ import {
   Buttons,
   Name,
 } from "./styled";
+import PictureContainer from "../PictureContainer";
 
 const TweetCard = ({
   tweet: { id, user, content, date, likes, comments },
@@ -24,7 +24,7 @@ const TweetCard = ({
     <Container>
       <PictureContainer>
         <img
-          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80"
+          src="https://pbs.twimg.com/profile_images/1279589529012383745/5RZMRIRd_400x400.jpg"
           alt=""
         />
       </PictureContainer>

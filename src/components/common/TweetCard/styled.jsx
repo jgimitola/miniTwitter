@@ -13,18 +13,6 @@ export const Container = styled.div`
   border-bottom: 1px solid ${border_gray};
 `;
 
-export const PictureContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  & img {
-    border-radius: 100%;
-    width: 3rem;
-    height: 3rem;
-  }
-`;
-
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -66,8 +54,7 @@ export const Content = styled.div`
 export const Buttons = styled.div`
   display: flex;
   justify-content: flex-start;
-  gap:4rem;
+  gap: 4rem;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;  
-
+  margin-bottom: 0.5rem;
 `;

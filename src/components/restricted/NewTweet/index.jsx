@@ -1,4 +1,12 @@
 import { useState } from "react";
+import PictureContainer from "../../common/PictureContainer";
+
+import {
+  Container,
+  CreateTweetControls,
+  TweetArea,
+  TweetButton,
+} from "../NewTweet/styled";
 
 const NewTweet = ({ addTweet }) => {
   const [content, setContent] = useState("");
@@ -19,23 +27,29 @@ const NewTweet = ({ addTweet }) => {
   };
 
   return (
-    <form>
-      <div>
-        <textarea
+    <Container>
+      <PictureContainer>
+        <img
+          src="https://pbs.twimg.com/profile_images/1279589529012383745/5RZMRIRd_400x400.jpg"
+          alt=""
+        />
+      </PictureContainer>
+      <CreateTweetControls>
+        <TweetArea
           name="content"
           id="content"
-          placeholder="say something"
+          placeholder="What's happening?"
+          maxLength={240}
           onChange={(event) => {
             setContent(event.target.value);
           }}
-        ></textarea>
-      </div>
-      <div>
-        <button onClick={handleClick} type="button">
-          send
-        </button>
-      </div>
-    </form>
+        ></TweetArea>
+
+        <TweetButton onClick={handleClick} type="button">
+          Tweet
+        </TweetButton>
+      </CreateTweetControls>
+    </Container>
   );
 };
 

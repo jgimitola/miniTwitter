@@ -32,6 +32,11 @@ export const Header = styled.h2`
   top: 0;
   z-index: 100;
   padding: 15px 20px;
+  background-color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  border-bottom: 1px solid ${border_gray};
 
   & > h2 {
     font-size: 20px;
