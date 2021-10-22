@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { border_gray } from "../../../lib/ui/colors";
 
 export const Container = styled.div`
   display: flex;

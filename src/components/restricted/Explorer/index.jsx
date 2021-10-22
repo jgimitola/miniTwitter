@@ -1,6 +1,8 @@
 import Page from "../../common/Page";
 
-const Explorer = ({ meta }) => {
-  return <Page title="Explore" meta={meta}></Page>;
+const Explorer = ({ meta, setMainTarget, ...rest }) => {
+  return (
+    <Page title="Explore" meta={meta} setMainTarget={setMainTarget}></Page>
+  );
 };
 export default Explorer;

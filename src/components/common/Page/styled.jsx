@@ -1,18 +1,7 @@
 import styled from "styled-components";
 import { border_gray } from "../../../lib/ui/colors";
 
-export const Wrapper = styled.div`
-  display: flex;
-
-  height: 100vh;
-  max-width: 1300px;
-
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 10px;
-`;
-
-export const Main = styled.main`
+export const Main = styled.div`
   flex: 0.4;
   border-right: 1px solid ${border_gray};
   min-width: fit-content;

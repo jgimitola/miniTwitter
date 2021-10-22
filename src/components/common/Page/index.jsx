@@ -1,21 +1,20 @@
-import Nav from "../Nav";
-import Aside from "../Aside";
-import { Wrapper, Main, Header } from "./styled";
+import { useEffect } from "react";
 
-const Page = ({ children, title, meta }) => {
+import { Main, Header } from "./styled";
+
+const Page = ({ children, title, meta, setMainTarget, ...rest }) => {
+  useEffect(() => {
+    setMainTarget("restricted");
+  }, [setMainTarget]);
+
   return (
     <>
       {meta}
-      <Wrapper>
-        <Nav />
 
-        <Main>
-          <Header>{title}</Header>
-          {children}
-        </Main>
-
-        <Aside />
-      </Wrapper>
+      <Main>
+        <Header>{title}</Header>
+        {children}
+      </Main>
     </>
   );
 };

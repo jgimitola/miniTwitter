@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Container, PictureContainer, ContentContainer } from "./styled";
 const Tweet = ({tweet: {id, user, content, date, likes, comments}, removeTweet}) => {
   
