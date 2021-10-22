@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { useHistory } from "react-router";
 
 import { primary } from "../colors";
 import { ReactComponent as TwitterIcon } from "../../../images/twitter_logo.svg";
@@ -24,18 +25,31 @@ const Icon = styled(TwitterIcon)`
     }
   }};
   height: auto;
-  fill: ${({ variant }) => {
-    return variant === "white" ? "white" : primary;
-  }};
-
+  fill: ${({ variant }) => (variant === "white" ? "white" : primary)};
   max-width: 100%;
   max-height: 100%;
 `;
 
-const TwitterLogo = ({ className, size, variant, titleDisplay }) => {
+const TwitterLogo = ({
+  className,
+  size,
+  variant,
+  redirectTo,
+  titleDisplay,
+}) => {
+  const history = useHistory();
+
   return (
     <div className={className}>
-      <Icon size={size} variant={variant} />
+      <Icon
+        size={size}
+        variant={variant}
+        onClick={() => {
+          if (redirectTo) {
+            history.push(redirectTo);
+          }
+        }}
+      />
       <Title titleDisplay={titleDisplay}>MiniTwitter</Title>
     </div>
   );
@@ -44,6 +58,10 @@ const TwitterLogo = ({ className, size, variant, titleDisplay }) => {
 const StyledTwitterLogo = styled(TwitterLogo)`
   display: block;
   box-sizing: border-box;
+
+  ${Icon} {
+    cursor: ${({ redirectTo }) => (redirectTo ? "pointer" : "default")};
+  }
 `;
 
 export default StyledTwitterLogo;

@@ -7,7 +7,7 @@ import { Sidebar } from "./styled";
 const Nav = () => {
   return (
     <Sidebar>
-      <TwitterLogo size="xs" titleDisplay="none" />
+      <TwitterLogo size="xs" titleDisplay="none" redirectTo="/home" />
 
       {navButtons.map(({ SvgIcon, buttonLabel, linkTo }) => {
         return (

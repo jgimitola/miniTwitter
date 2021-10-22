@@ -37,7 +37,7 @@ const Login = ({ meta }) => {
       {meta}
       <Main>
         <div>
-          <TwitterLogo size="sm" />
+          <TwitterLogo size="sm" redirectTo="/" />
 
           <h1>Login to your account</h1>
 

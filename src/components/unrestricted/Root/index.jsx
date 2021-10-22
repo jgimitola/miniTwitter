@@ -16,7 +16,11 @@ const Root = ({ meta }) => {
 
         <Wrapper>
           <FormContainer>
-            <TwitterLogo size="sm" titleDisplay="none" />
+            <TwitterLogo
+              size="sm"
+              titleDisplay="none"
+              redirectTo="/"
+            ></TwitterLogo>
 
             <h1>Welcome to MiniTwitter</h1>
 

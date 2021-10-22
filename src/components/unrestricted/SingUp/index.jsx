@@ -33,7 +33,7 @@ const SingUp = ({ meta }) => {
 
       <Main>
         <div>
-          <TwitterLogo size="sm" />
+          <TwitterLogo size="sm" redirectTo="/" />
 
           <h1>Create your account</h1>
 

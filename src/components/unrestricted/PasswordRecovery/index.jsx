@@ -10,7 +10,7 @@ const PasswordRecovery = ({ meta }) => {
       {meta}
       <Main>
         <div>
-          <TwitterLogo size="sm" />
+          <TwitterLogo size="sm" redirectTo="/" />
 
           <h1>Recover your password</h1>
 
