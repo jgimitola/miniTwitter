@@ -12,10 +12,9 @@ import { AuthContext } from "../../../context/AuthContext";
 const Login = ({ meta }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const auth = useContext(AuthContext);
-  const { isLoggedIn, user } = useContext(AuthContext);
+
   const history = useHistory();
-  const isAuth = isLoggedIn();
+  const auth = useContext(AuthContext);
 
   const handleLogin = (event) => {
     event.preventDefault();
