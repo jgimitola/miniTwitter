@@ -5,7 +5,7 @@ import {
   Header,
   Content,
   UserName,
-  Date,
+  Date as DateTag,
   Buttons,
   Name,
 } from "./styled";
@@ -14,6 +14,12 @@ const TweetCard = ({
   tweet: { id, user, content, date, likes, comments },
   removeTweet,
 }) => {
+  const dateObject = new Date(date);
+  const MONTH = dateObject.getUTCMonth() + 1;
+  const DAY = dateObject.getUTCDate();
+  const YEAR = dateObject.getUTCFullYear();
+  const formatedDate = `${DAY}/${MONTH}/${YEAR}`;
+
   return (
     <Container>
       <PictureContainer>
@@ -25,7 +31,8 @@ const TweetCard = ({
       <ContentContainer>
         <Header>
           <Name>{user.name || "John Doe"}</Name>
-          <UserName>@{user?.username}</UserName> • <Date>{date}</Date>
+          <UserName>@{user?.username}</UserName> •{" "}
+          <DateTag>{formatedDate}</DateTag>
         </Header>
         <Content>{content}</Content>
         <Buttons>
