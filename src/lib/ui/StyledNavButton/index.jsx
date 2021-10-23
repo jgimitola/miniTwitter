@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 import { primary, labelNav_black } from "../colors";
@@ -14,7 +14,6 @@ const SidebarButton = styled(Link)`
   &:hover {
     background-color: #e8f5fe;
     border-radius: 30px;
-    color: ${primary};
     transition: color 100ms ease-out;
   }
 
@@ -36,15 +35,33 @@ const SidebarButton = styled(Link)`
   }
 `;
 
-const Button = ({ className, SvgIcon, buttonLabel, linkTo }) => {
+const Button = ({
+  className,
+  SvgIcon,
+  buttonLabel,
+  linkTo,
+  active,
+  ...rest
+}) => {
   return (
-    <SidebarButton className={className} to={linkTo}>
+    <SidebarButton className={className} to={linkTo} {...rest}>
       <SvgIcon />
       <h2>{buttonLabel}</h2>
     </SidebarButton>
   );
 };
 
-const StyledNavButton = styled(Button)``;
+const StyledNavButton = styled(Button)`
+  ${(props) =>
+    props.active &&
+    css`
+      color: ${primary};
+
+      svg {
+        fill: ${primary};
+        stroke: ${primary};
+      }
+    `}
+`;
 
 export default StyledNavButton;

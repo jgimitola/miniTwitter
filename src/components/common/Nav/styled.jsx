@@ -24,4 +24,10 @@ export const Sidebar = styled.nav`
     height: 50px;
     margin-top: 20px;
   }
+
+  @media (max-width: 768px) {
+    & ${StyledTwitterLogo} {
+      padding-left: 20px;
+    }
+  }
 `;

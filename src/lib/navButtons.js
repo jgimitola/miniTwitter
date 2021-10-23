@@ -12,6 +12,7 @@ const navButtons = [
     SvgIcon: HomeIcon,
     buttonLabel: "Home",
     linkTo: "/home",
+    active: true,
   },
   {
     SvgIcon: ExploreIcon,
@@ -49,5 +50,11 @@ const navButtons = [
     linkTo: "/home",
   },
 ];
+
+navButtons.forEach((b) => {
+  if (!b.active) {
+    b.active = false;
+  }
+});
 
 export default navButtons;
