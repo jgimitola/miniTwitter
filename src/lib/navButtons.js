@@ -5,7 +5,6 @@ import { ReactComponent as NotificationsIcon } from "../images/notifications.svg
 import { ReactComponent as BookmarkIcon } from "../images/bookmarks.svg";
 import { ReactComponent as ListIcon } from "../images/list.svg";
 import { ReactComponent as ProfileIcon } from "../images/profile.svg";
-import { ReactComponent as MoreIcon } from "../images/more.svg";
 
 const navButtons = [
   {
@@ -43,12 +42,7 @@ const navButtons = [
     SvgIcon: ProfileIcon,
     buttonLabel: "Profile",
     linkTo: "/profile",
-  },
-  {
-    SvgIcon: MoreIcon,
-    buttonLabel: "More",
-    linkTo: "/home",
-  },
+  },  
 ];
 
 navButtons.forEach((b) => {

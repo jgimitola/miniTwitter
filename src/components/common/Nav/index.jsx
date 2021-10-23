@@ -1,6 +1,19 @@
 import { useState } from "react";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuIcon,
+  MenuCommand,
+  MenuDivider,
+} from "@chakra-ui/react";
 
 import NavButton from "../NavButton";
+import MoreNavButton from "../../common/MoreNavButton";
 import Button from "../Button";
 import TwitterLogo from "../TwitterLogo";
 import navButtons from "../../../lib/navButtons";
@@ -48,7 +61,7 @@ const Nav = () => {
           />
         );
       })}
-
+      <MoreNavButton buttonLabel={"More"} />
       <Button primary>Tweet</Button>
     </Sidebar>
   );
