@@ -1,11 +1,9 @@
 import styled, { css } from "styled-components";
 
-import { Menu } from "@chakra-ui/react";
-
 import { primary, labelNav_black } from "../../../lib/ui/colors";
 import { ReactComponent as MoreIcon } from "../../../images/more.svg";
 
-const SidebarButtonMenu = styled(Menu)`
+const SidebarButtonMenu = styled.div`
   text-decoration: none;
   color: ${labelNav_black};
 
