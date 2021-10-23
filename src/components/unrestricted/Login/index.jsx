@@ -30,7 +30,7 @@ const Login = ({ meta, setMainTarget, ...rest }) => {
         }
       })
       .catch((err) => {
-        console.log("err", err);
+        console.log("err21312", err);
       });
   };
 

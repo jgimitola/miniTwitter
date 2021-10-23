@@ -6,7 +6,7 @@ const AuthProvider = (props) => {
     const [user, setUser] = useState({});
 
     useEffect(() => {
-        const user = localStorage.getItem("user");
+        const user = JSON.parse(localStorage.getItem("user"));
         setUser(user);
     }, []);
 
