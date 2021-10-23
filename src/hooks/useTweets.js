@@ -1,23 +1,47 @@
 import { useState } from "react";
-import data from "./../mocks/tweets.json";
+import tweetService from "../services/tweetService"
 
 export const useTweets = () => {
-    const [tweets, setTweets] = useState(data);
+    const [tweets, setTweets] = useState([]);
 
-    const addTweet = (tweet) => {
+    const addTweet = async (tweet) => {
+        const newTweet = await tweetService.addTweet(tweet);
         const tmpTweets = [...tweets];
-        tmpTweets.push(tweet);
+        const user = JSON.parse(localStorage.getItem("user"));
+        const newUser = {
+            _id: newTweet.user,
+            name: user.name,
+            username: user.username
+        }
+        newTweet.user = newUser;
+        tmpTweets.unshift(newTweet);
+        console.log(newTweet)
         setTweets(tmpTweets);
     };
 
-    const removeTweet = (id) => {
-        const tmpTweets = tweets.filter((tweet)=> id !== tweet.id );
-        setTweets(tmpTweets);
+    const removeTweet = async (id) => {
+        const body = {
+            "tweetId": id
+        }
+        const response = await tweetService.deleteTweet(body)
+        if (response != null) {
+            const tmpTweets = tweets.filter((tweet) => id !== tweet._id);
+            setTweets(tmpTweets);
+        } else {
+            alert("Parece que intentas eliminar un tweet que no es tuyo")
+        }
     };
-    
+
+    const getTweets = async () => {
+        const response = await tweetService.getTweetsList();
+        const tmpTweets = response.data
+        setTweets(tmpTweets);
+    }
+
     return {
         tweets,
         removeTweet,
-        addTweet
+        addTweet,
+        getTweets
     }
 }

@@ -13,15 +13,7 @@ const NewTweet = ({ addTweet }) => {
   const handleClick = (event) => {
     event.preventDefault();
     const tweet = {
-      id: Date.now(),
-      content,
-      user: {
-        username: "jestrade",
-      },
-      likes: 0,
-      comments: [],
-      retweets: 0,
-      date: Date.now(),
+      content: content,
     };
     addTweet(tweet);
   };

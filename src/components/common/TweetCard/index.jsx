@@ -11,7 +11,7 @@ import {
 import PictureContainer from "../PictureContainer";
 
 const TweetCard = ({
-  tweet: { id, user, content, date, likes, comments },
+  tweet: { _id, user, content, date, likes, comments },
   removeTweet,
 }) => {
   const dateObject = new Date(date);
@@ -38,7 +38,7 @@ const TweetCard = ({
         <Buttons>
           <button>likes: {likes}</button>
           <button>comments: {comments?.length}</button>
-          <button onClick={() => removeTweet(id)}>remove</button>
+          <button onClick={() => removeTweet(_id)}>remove</button>
         </Buttons>
       </ContentContainer>
     </Container>

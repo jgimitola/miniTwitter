@@ -39,4 +39,24 @@ const post = async (endpoint, data) => {
     }
 };
 
-export { get, post };
+const remove = async (endpoint, body) => {
+    try {
+        const url = `${httpAPI}/${endpoint}`;
+        console.log(token);
+        console.log(body)
+        const config = {
+            data: body,
+
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': token
+            }
+        };
+        const response = await axios.delete(url, config);
+        return response;
+    } catch (err) {
+        return null
+    }
+};
+
+export { get, post, remove };
