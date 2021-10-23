@@ -2,16 +2,12 @@ import axios from "axios";
 
 const httpAPI = process.env.REACT_APP_HTTP_API;
 
-let user = localStorage.getItem("user");
-let jsonUser = user && JSON.parse(user);
-let token = jsonUser?.token;
+let token;
 
 const getToken = () => {
-  if (!token) {
-    user = localStorage.getItem("user");
-    jsonUser = user && JSON.parse(user);
-    token = jsonUser?.token;
-  }
+  let user = localStorage.getItem("user");
+  let jsonUser = user && JSON.parse(user);
+  token = jsonUser?.token;
   return token;
 };
 
@@ -53,16 +49,16 @@ const remove = async (endpoint, body) => {
   getToken();
   try {
     const url = `${httpAPI}/${endpoint}`;
-    console.log(token);
-    console.log(body);
     const config = {
       data: body,
-
       headers: {
         "Content-Type": "application/json",
         "x-access-token": token,
       },
     };
+    console.log(token);
+    console.log(body);
+    console.log("____________");
     const response = await axios.delete(url, config);
     return response;
   } catch (err) {
