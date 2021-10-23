@@ -36,11 +36,12 @@ const TwitterLogo = ({
   variant,
   redirectTo,
   titleDisplay,
+  ...rest
 }) => {
   const history = useHistory();
 
   return (
-    <div className={className}>
+    <div className={className} {...rest}>
       <Icon
         size={size}
         variant={variant}

@@ -25,7 +25,14 @@ const Nav = () => {
 
   return (
     <Sidebar>
-      <TwitterLogo size="xs" titleDisplay="none" redirectTo="/home" />
+      <TwitterLogo
+        size="xs"
+        titleDisplay="none"
+        redirectTo="/home"
+        onClick={() => {
+          handleActiveButton("Home");
+        }}
+      />
 
       {buttons.map(({ SvgIcon, buttonLabel, linkTo, active }) => {
         return (
