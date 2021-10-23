@@ -9,7 +9,8 @@ const Tweets = () => {
 
   useEffect(() => {
     getTweets();
-  }, [getTweets]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>

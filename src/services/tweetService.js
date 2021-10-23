@@ -8,7 +8,6 @@ const getTweetsList = async () => {
 
 const addTweet = async (tweet) => {
     const json = await post("tweets", tweet);
-
     return json.data
 };
 
