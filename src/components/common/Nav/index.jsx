@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+
+import { AuthContext } from "../../../context/AuthContext";
 
 import NavButton from "../NavButton";
-import MoreNavButton from "../../common/MoreNavButton";
+import LogOutNavButton from "../LogOutNavButton";
 import Button from "../Button";
 import TwitterLogo from "../TwitterLogo";
 import navButtons from "../../../lib/navButtons";
@@ -9,6 +11,7 @@ import { Sidebar } from "./styled";
 
 const Nav = () => {
   const [buttons, setButtons] = useState(navButtons);
+  const { logout } = useContext(AuthContext);
 
   const handleActiveButton = (buttonLabel) => {
     const position = buttons.map((b) => b.buttonLabel).indexOf(buttonLabel);
@@ -22,6 +25,10 @@ const Nav = () => {
       return newB;
     });
     setButtons(newButtons);
+  };
+
+  const handleLogout = () => {
+    logout();    
   };
 
   return (
@@ -49,7 +56,7 @@ const Nav = () => {
           />
         );
       })}
-      <MoreNavButton buttonLabel={"More"} />
+      <LogOutNavButton buttonLabel={"Log Out"} onClick={handleLogout} />
       <Button primary>Tweet</Button>
     </Sidebar>
   );

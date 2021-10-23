@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { primary, labelNav_black } from "../../../lib/ui/colors";
-import { ReactComponent as MoreIcon } from "../../../images/more.svg";
+import { ReactComponent as LogOutIcon } from "../../../images/logout.svg";
 
 const SidebarButtonMenu = styled.div`
   text-decoration: none;
@@ -45,7 +45,7 @@ const Button = ({
 }) => {
   return (
     <SidebarButtonMenu className={className} {...rest}>
-      <MoreIcon />
+      <LogOutIcon />
       <h2>{buttonLabel}</h2>
     </SidebarButtonMenu>
   );
