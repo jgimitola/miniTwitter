@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const RightSidebar = styled.div`
   flex: 0.3;
+  @media (max-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
 `;
 
 export const TrendContainer = styled.div`
