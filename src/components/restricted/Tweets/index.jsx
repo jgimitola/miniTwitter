@@ -16,7 +16,7 @@ const Tweets = () => {
     <>
       <NewTweet addTweet={addTweet} />
       {tweets?.length > 0 ? (
-        tweets.map((tweet) => (
+        tweets.map((tweet, i) => (
           <TweetCard key={tweet._id} tweet={tweet} removeTweet={removeTweet} />
         ))
       ) : (

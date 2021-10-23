@@ -11,10 +11,10 @@ import {
 import PictureContainer from "../PictureContainer";
 
 const TweetCard = ({
-  tweet: { _id, user, content, date, likes, comments },
+  tweet: { _id, user, content, createdAt, likes, comments },
   removeTweet,
 }) => {
-  const dateObject = new Date(date);
+  const dateObject = new Date(createdAt);
   const MONTH = dateObject.getUTCMonth() + 1;
   const DAY = dateObject.getUTCDate();
   const YEAR = dateObject.getUTCFullYear();
