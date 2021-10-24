@@ -25,6 +25,26 @@ const getTrendings = async (account) => {
   return json;
 }
 
-const tweetService = { getTweetsList, addTweet, deleteTweet, likeTweet, getTrendings };
+const removeComment = async (tweetId, commentId) => {
+  const body = {
+    tweetId,
+    commentId
+  };
+  const json = await remove("tweets/comments", body);
+  return json;
+
+};
+
+const addComment = async (comment, tweetId) => {
+  const body = {
+    tweetId,
+    comment
+  };
+  const json = await post("tweets/comments", body);
+  return json;
+
+};
+
+const tweetService = { getTweetsList, addTweet, deleteTweet, likeTweet, getTrendings, removeComment, addComment };
 
 export default tweetService;

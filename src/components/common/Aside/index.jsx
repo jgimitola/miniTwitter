@@ -10,8 +10,11 @@ const Aside = () => {
 
   const fetchTrendings = async () => {
     const res = await tweetService.getTrendings("auronplay");
-    console.log(res);
-    setTweets(res.data.slice(0, 10));
+    try {
+      setTweets(res.data.slice(0, 10));
+    } catch (err) {
+      setTweets([]);
+    }
   };
 
   useEffect(() => {

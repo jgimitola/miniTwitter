@@ -9,8 +9,11 @@ const Explorer = ({ meta, setMainTarget, ...rest }) => {
 
   const fetchTrendings = async () => {
     const res = await tweetService.getTrendings("CNN");
-    console.log(res);
-    setTweets(res.data);
+    try {
+      setTweets(res.data);
+    } catch (err) {
+      setTweets([]);
+    }
   };
 
   useEffect(() => {

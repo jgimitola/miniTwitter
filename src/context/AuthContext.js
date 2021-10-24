@@ -21,7 +21,7 @@ const AuthProvider = (props) => {
     };
 
     const isLoggedIn = () => {
-        return user ? !!Object.keys(user).length : false;
+        return user ? !!localStorage.getItem("user") : false;
     };
 
     return (<AuthContext.Provider value={{ login, logout, isLoggedIn, user }}>
