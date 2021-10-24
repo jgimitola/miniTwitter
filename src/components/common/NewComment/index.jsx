@@ -15,8 +15,7 @@ const NewComment = ({ setComments, comments, tweetId }) => {
 
   const handleClick = async (event) => {
     event.preventDefault();
-    const response = await tweetService.addComment(content, tweetId);
-    console.log(response);
+    await tweetService.addComment(content, tweetId);
   };
 
   return (

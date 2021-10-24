@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import Modal from "react-modal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import routes, { generateMeta } from "./lib/routes";
 import { AuthContext } from "./context/AuthContext";
@@ -33,9 +35,7 @@ const App = () => {
 
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  const afterOpenModal = () => {
-    // references are now sync'd and can be accessed.
-  };
+  const afterOpenModal = () => {};
 
   const closeModal = () => {
     setIsOpen(false);
@@ -44,6 +44,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyles />
+      <ToastContainer />
       <Main mainTarget={mainTarget}>
         {isLoggedIn() && <Nav setIsOpen={setIsOpen} />}
         <Switch>

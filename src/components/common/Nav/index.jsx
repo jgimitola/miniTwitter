@@ -1,17 +1,20 @@
 import { useContext, useState } from "react";
 
 import { AuthContext } from "../../../context/AuthContext";
+import { useHistory } from "react-router";
+import navButtons from "../../../lib/navButtons";
 
 import NavButton from "../NavButton";
 import LogOutNavButton from "../LogOutNavButton";
 import Button from "../Button";
 import TwitterLogo from "../TwitterLogo";
-import navButtons from "../../../lib/navButtons";
 import { Sidebar } from "./styled";
+import { success } from "../../../lib/ui/Toasts";
 
 const Nav = ({ setIsOpen, ...rest }) => {
   const [buttons, setButtons] = useState(navButtons);
   const { logout } = useContext(AuthContext);
+  const history = useHistory();
 
   const handleActiveButton = (buttonLabel) => {
     const position = buttons.map((b) => b.buttonLabel).indexOf(buttonLabel);
@@ -28,7 +31,11 @@ const Nav = ({ setIsOpen, ...rest }) => {
   };
 
   const handleLogout = () => {
-    logout();
+    success("Logged Out!");
+    setTimeout(() => {
+      logout();
+      history.push("/");
+    }, 1000);
   };
 
   return (
@@ -56,7 +63,7 @@ const Nav = ({ setIsOpen, ...rest }) => {
           />
         );
       })}
-      <LogOutNavButton buttonLabel={"Log Out"} onClick={handleLogout} />
+      <LogOutNavButton buttonLabel="Log Out" onClick={handleLogout} />
       <Button
         primary
         onClick={() => {

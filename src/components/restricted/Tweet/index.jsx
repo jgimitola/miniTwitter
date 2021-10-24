@@ -14,7 +14,6 @@ const Tweet = ({ meta, setMainTarget, ...rest }) => {
   const { tweets } = useContext(TweetContext);
   let tweet;
   tweet = tweets.find((t) => t._id === id);
-  console.log(tweet);
 
   useEffect(() => {
     setComments(tweet.comments);

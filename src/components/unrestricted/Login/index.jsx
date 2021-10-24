@@ -1,12 +1,14 @@
 import { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router";
 
+import { loginUser } from "../../../services/userService";
+import { AuthContext } from "../../../context/AuthContext";
+
 import Field from "../../common/Field";
 import Suggestion from "../../common/Suggestion";
 import TwitterLogo from "../../common/TwitterLogo";
 import Button from "../../common/Button";
-import { loginUser } from "../../../services/userService";
-import { AuthContext } from "../../../context/AuthContext";
+import { success, error } from "../../../lib/ui/Toasts";
 
 const Login = ({ meta, setMainTarget, ...rest }) => {
   const [username, setUsername] = useState("");
@@ -21,17 +23,30 @@ const Login = ({ meta, setMainTarget, ...rest }) => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    loginUser(username, password)
-      .then((response) => {
-        if (response?.data.message === "ok") {
-          const user = response.data.data;
-          auth.login(user);
-          history.push("/home");
-        }
-      })
-      .catch((err) => {
-        console.log("err21312", err);
-      });
+    if (!!username && !!password) {
+      loginUser(username, password)
+        .then((response) => {
+          switch (response.data.message) {
+            case "ok":
+              const user = response.data.data;
+              success("Logged In!");
+              auth.login(user);
+              setTimeout(() => {
+                history.push("/home");
+              }, 2000);
+
+              break;
+            default:
+              error("User or password is incorrect");
+              break;
+          }
+        })
+        .catch((err) => {
+          error(err.toString());
+        });
+    } else {
+      error("User and password must be provided.");
+    }
   };
 
   return (
@@ -65,11 +80,9 @@ const Login = ({ meta, setMainTarget, ...rest }) => {
             linkTo="/passwordrecovery"
           />
 
-          {/*<Link to="/home">*/}
           <Button primary onClick={handleLogin}>
             Login now
           </Button>
-          {/*</Link>*/}
         </form>
       </div>
       <Suggestion

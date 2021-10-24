@@ -5,6 +5,12 @@ import Suggestion from "../../common/Suggestion";
 import TwitterLogo from "../../common/TwitterLogo";
 import Button from "../../common/Button";
 
+/**
+ *
+ * This page doesn't do anything because the API doesn't have the endpoint
+ * to achieve the functionality.
+ *
+ */
 const PasswordRecovery = ({ meta, setMainTarget, ...rest }) => {
   useEffect(() => {
     setMainTarget("passwordrecovery");

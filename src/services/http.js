@@ -41,7 +41,7 @@ const post = async (endpoint, data) => {
     const response = await axios.post(url, data, config);
     return response;
   } catch (err) {
-    return null;
+    return err;
   }
 };
 

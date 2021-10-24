@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
+import { signUpUser } from "../../../services/userService";
+
 import TwitterLogo from "../../common/TwitterLogo";
 import Field from "../../common/Field";
 import Button from "../../common/Button";
 import Suggestion from "../../common/Suggestion";
-import { signUpUser } from "../../../services/userService";
+import { success, error } from "../../../lib/ui/Toasts";
 
 const SingUp = ({ meta, setMainTarget, ...rest }) => {
   const [name, setName] = useState("");
@@ -13,6 +15,7 @@ const SingUp = ({ meta, setMainTarget, ...rest }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
   const history = useHistory();
 
   useEffect(() => {
@@ -21,13 +24,34 @@ const SingUp = ({ meta, setMainTarget, ...rest }) => {
 
   const handleSignUp = (event) => {
     event.preventDefault();
-    signUpUser(name, email, username, password, passwordConfirmation).then(
-      (response) => {
-        if (response?.status === 200) {
-          history.push("/login");
-        }
-      }
-    );
+    if (
+      !!name &&
+      !!email &&
+      !!username &&
+      !!password &&
+      !!passwordConfirmation
+    ) {
+      signUpUser(name, email, username, password, passwordConfirmation)
+        .then((response) => {
+          if (response && response.status === 200) {
+            success("New user created");
+            setTimeout(() => {
+              history.push("/login");
+            }, 2000);
+          } else {
+            response.response.data.message.forEach(async (m, i) => {
+              await setTimeout(() => {
+                error(m);
+              }, 200 + i * 300);
+            });
+          }
+        })
+        .catch((e) => {
+          error(e.toString());
+        });
+    } else {
+      error("All fields must be filled");
+    }
   };
 
   return (
@@ -82,7 +106,6 @@ const SingUp = ({ meta, setMainTarget, ...rest }) => {
         </form>
 
         <Button primary onClick={handleSignUp}>
-          {" "}
           Sign Up
         </Button>
       </div>

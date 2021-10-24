@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
 
 import { TweetContext } from "../../../context/TweetContext";
-import PictureContainer from "../../common/PictureContainer";
 
+import PictureContainer from "../../common/PictureContainer";
 import {
   Container,
   CreateTweetControls,

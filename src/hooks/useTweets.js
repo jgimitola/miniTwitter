@@ -1,5 +1,8 @@
 import { useState } from "react";
+
 import tweetService from "../services/tweetService";
+
+import { error } from "../lib/ui/Toasts";
 
 export const useTweets = () => {
   const [tweets, setTweets] = useState([]);
@@ -27,7 +30,7 @@ export const useTweets = () => {
       const tmpTweets = tweets.filter((tweet) => id !== tweet._id);
       setTweets(tmpTweets);
     } else {
-      alert("Parece que intentas eliminar un tweet que no es tuyo");
+      error("You don't own this tweet");
     }
   };
 
@@ -45,8 +48,6 @@ export const useTweets = () => {
     await tweetService.likeTweet(body);
     await getTweets();
   };
-
-
 
   return {
     tweets,
