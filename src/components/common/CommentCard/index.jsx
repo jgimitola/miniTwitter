@@ -11,6 +11,11 @@ import {
 } from "./styled";
 import PictureContainer from "../PictureContainer";
 
+/**
+ *
+ * remove option doesn't work because there is no endpoint available
+ *
+ */
 const CommentCard = ({
   comment: { _id, user, comment },
   setComments,
