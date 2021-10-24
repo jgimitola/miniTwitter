@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import { TweetContext } from "../../../context/TweetContext";
 import PictureContainer from "../../common/PictureContainer";
 
 import {
@@ -8,14 +10,20 @@ import {
   TweetButton,
 } from "../NewTweet/styled";
 
-const NewTweet = ({ addTweet }) => {
+const NewTweet = () => {
   const [content, setContent] = useState("");
+
+  const { addTweet } = useContext(TweetContext);
+
   const handleClick = (event) => {
     event.preventDefault();
-    const tweet = {
-      content: content,
-    };
-    addTweet(tweet);
+    if (!!content) {
+      const tweet = {
+        content: content,
+      };
+      addTweet(tweet);
+      setContent("");
+    }
   };
 
   return (
@@ -32,6 +40,7 @@ const NewTweet = ({ addTweet }) => {
           id="content"
           placeholder="What's happening?"
           maxLength={240}
+          value={content}
           onChange={(event) => {
             setContent(event.target.value);
           }}

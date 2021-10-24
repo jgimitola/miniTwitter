@@ -1,11 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 
-import { useTweets } from "./../../../hooks/useTweets";
+import { TweetContext } from "../../../context/TweetContext";
 import NewTweet from "./../NewTweet";
 import TweetCard from "../../common/TweetCard";
+import { Center } from "./styled";
 
 const Tweets = () => {
-  const { tweets, removeTweet, addTweet, getTweets } = useTweets();
+  const { tweets, removeTweet, getTweets } = useContext(TweetContext);
 
   useEffect(() => {
     getTweets();
@@ -14,13 +15,13 @@ const Tweets = () => {
 
   return (
     <>
-      <NewTweet addTweet={addTweet} />
+      <NewTweet />
       {tweets?.length > 0 ? (
         tweets.map((tweet, i) => (
           <TweetCard key={tweet._id} tweet={tweet} removeTweet={removeTweet} />
         ))
       ) : (
-        <p>no data</p>
+        <Center>There are no tweets</Center>
       )}
     </>
   );

@@ -9,7 +9,7 @@ import TwitterLogo from "../TwitterLogo";
 import navButtons from "../../../lib/navButtons";
 import { Sidebar } from "./styled";
 
-const Nav = () => {
+const Nav = ({ setIsOpen, ...rest }) => {
   const [buttons, setButtons] = useState(navButtons);
   const { logout } = useContext(AuthContext);
 
@@ -28,7 +28,7 @@ const Nav = () => {
   };
 
   const handleLogout = () => {
-    logout();    
+    logout();
   };
 
   return (
@@ -57,7 +57,14 @@ const Nav = () => {
         );
       })}
       <LogOutNavButton buttonLabel={"Log Out"} onClick={handleLogout} />
-      <Button primary>Tweet</Button>
+      <Button
+        primary
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      >
+        Tweet
+      </Button>
     </Sidebar>
   );
 };
