@@ -20,6 +20,7 @@ const App = () => {
 
   const customStyles = {
     content: {
+      width: "400px",      
       top: "25%",
       left: "50%",
       right: "auto",
