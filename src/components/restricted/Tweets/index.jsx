@@ -6,7 +6,7 @@ import TweetCard from "../../common/TweetCard";
 import { Center } from "./styled";
 
 const Tweets = () => {
-  const { tweets, removeTweet, getTweets } = useContext(TweetContext);
+  const { tweets, getTweets } = useContext(TweetContext);
 
   useEffect(() => {
     getTweets();
@@ -18,7 +18,7 @@ const Tweets = () => {
       <NewTweet />
       {tweets?.length > 0 ? (
         tweets.map((tweet, i) => (
-          <TweetCard key={tweet._id} tweet={tweet} removeTweet={removeTweet} />
+          <TweetCard key={tweet._id} tweet={tweet}/>
         ))
       ) : (
         <Center>There are no tweets</Center>

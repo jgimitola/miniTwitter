@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   padding-top: 0.8rem;
   padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0;
   min-height: 100px;
 
@@ -49,6 +50,7 @@ export const Content = styled.div`
   margin: 0;
   max-width: 50ch;
   line-height: 22px;
+  word-wrap: break-word;
 `;
 
 export const Buttons = styled.div`

@@ -15,7 +15,6 @@ export const useTweets = () => {
     };
     newTweet.user = newUser;
     tmpTweets.unshift(newTweet);
-    console.log(newTweet);
     setTweets(tmpTweets);
   };
 
@@ -38,10 +37,20 @@ export const useTweets = () => {
     setTweets(tmpTweets);
   };
 
+  const likeTweet = async (id) => {
+    const body = {
+      like: 0,
+      tweetId: id,
+    };
+    const response = await tweetService.likeTweet(body);
+    await getTweets();
+  };
+
   return {
     tweets,
     removeTweet,
     addTweet,
     getTweets,
+    likeTweet,
   };
 };

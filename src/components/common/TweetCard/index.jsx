@@ -1,3 +1,7 @@
+import { useContext } from "react";
+
+import { TweetContext } from "../../../context/TweetContext";
+
 import {
   Container,
   ContentContainer,
@@ -12,13 +16,14 @@ import PictureContainer from "../PictureContainer";
 
 const TweetCard = ({
   tweet: { _id, user, content, createdAt, likes, comments },
-  removeTweet,
 }) => {
   const dateObject = new Date(createdAt);
   const MONTH = dateObject.getUTCMonth() + 1;
   const DAY = dateObject.getUTCDate();
   const YEAR = dateObject.getUTCFullYear();
   const formatedDate = `${DAY}/${MONTH}/${YEAR}`;
+
+  const { removeTweet, likeTweet } = useContext(TweetContext);
 
   return (
     <Container>
@@ -36,7 +41,13 @@ const TweetCard = ({
         </Header>
         <Content>{content}</Content>
         <Buttons>
-          <button>likes: {likes}</button>
+          <button
+            onClick={() => {
+              likeTweet(_id);
+            }}
+          >
+            likes: {likes}
+          </button>
           <button>comments: {comments?.length}</button>
           <button onClick={() => removeTweet(_id)}>remove</button>
         </Buttons>

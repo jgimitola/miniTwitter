@@ -1,4 +1,4 @@
-import { get, post, remove } from "./http";
+import { get, post, remove, put } from "./http";
 
 const getTweetsList = async () => {
   const json = await get("tweets");
@@ -15,6 +15,11 @@ const deleteTweet = async (body) => {
   return json;
 };
 
-const tweetService = { getTweetsList, addTweet, deleteTweet };
+const likeTweet = async (body) => {
+  const json = await post("tweets/likes", body);
+  return json;
+};
+
+const tweetService = { getTweetsList, addTweet, deleteTweet, likeTweet };
 
 export default tweetService;

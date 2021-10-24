@@ -5,10 +5,12 @@ import { useTweets } from "../hooks/useTweets";
 const TweetContext = createContext();
 
 const TweetProvider = (props) => {
-  const { tweets, removeTweet, addTweet, getTweets } = useTweets();
+  const { tweets, removeTweet, addTweet, getTweets, likeTweet } = useTweets();
 
   return (
-    <TweetContext.Provider value={{ tweets, removeTweet, addTweet, getTweets }}>
+    <TweetContext.Provider
+      value={{ tweets, removeTweet, addTweet, getTweets, likeTweet }}
+    >
       {props.children}
     </TweetContext.Provider>
   );

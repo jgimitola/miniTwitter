@@ -56,9 +56,6 @@ const remove = async (endpoint, body) => {
         "x-access-token": token,
       },
     };
-    console.log(token);
-    console.log(body);
-    console.log("____________");
     const response = await axios.delete(url, config);
     return response;
   } catch (err) {
@@ -66,4 +63,21 @@ const remove = async (endpoint, body) => {
   }
 };
 
-export { get, post, remove };
+const put = async (endpoint, data) => {
+  getToken();
+  try {
+    const url = `${httpAPI}/${endpoint}`;
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        "x-access-token": token,
+      },
+    };
+    const response = await axios.put(url, data, config);
+    return response;
+  } catch (err) {
+    return null;
+  }
+};
+
+export { get, post, remove, put };
