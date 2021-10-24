@@ -30,7 +30,7 @@ const NewTweet = () => {
     <Container>
       <PictureContainer>
         <img
-          src="https://pbs.twimg.com/profile_images/1279589529012383745/5RZMRIRd_400x400.jpg"
+          src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
           alt=""
         />
       </PictureContainer>

@@ -42,7 +42,7 @@ export const useTweets = () => {
       like: 0,
       tweetId: id,
     };
-    const response = await tweetService.likeTweet(body);
+    await tweetService.likeTweet(body);
     await getTweets();
   };
 

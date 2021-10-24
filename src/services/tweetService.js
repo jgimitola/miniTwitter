@@ -1,4 +1,4 @@
-import { get, post, remove, put } from "./http";
+import { get, post, remove } from "./http";
 
 const getTweetsList = async () => {
   const json = await get("tweets");
@@ -20,6 +20,11 @@ const likeTweet = async (body) => {
   return json;
 };
 
-const tweetService = { getTweetsList, addTweet, deleteTweet, likeTweet };
+const getTrendings = async (account) => {
+  const json = await get(`tweets/external/${account}`);
+  return json;
+}
+
+const tweetService = { getTweetsList, addTweet, deleteTweet, likeTweet, getTrendings };
 
 export default tweetService;
