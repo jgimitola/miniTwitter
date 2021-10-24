@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
     max-height: 100%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     & {
       width: 100%;
     }

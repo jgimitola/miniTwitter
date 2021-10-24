@@ -10,6 +10,7 @@ import Button from "../Button";
 import TwitterLogo from "../TwitterLogo";
 import { Sidebar } from "./styled";
 import { success } from "../../../lib/ui/Toasts";
+import { ReactComponent as TweetIcon } from "../../../images/tweet.svg";
 
 const Nav = ({ setIsOpen, ...rest }) => {
   const [buttons, setButtons] = useState(navButtons);
@@ -70,6 +71,7 @@ const Nav = ({ setIsOpen, ...rest }) => {
           setIsOpen(true);
         }}
       >
+        <TweetIcon />
         Tweet
       </Button>
     </Sidebar>

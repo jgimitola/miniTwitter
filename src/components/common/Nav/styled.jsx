@@ -11,6 +11,8 @@ export const Sidebar = styled.nav`
   padding-left: 20px;
   padding-right: 20px;
 
+  align-content: center;
+
   & ${StyledTwitterLogo} {
     width: 60px;
     font-size: 30px;
@@ -23,11 +25,31 @@ export const Sidebar = styled.nav`
     border-radius: 30px;
     height: 50px;
     margin-top: 20px;
+    width: 8rem;    
+  }
+
+  & ${StyledButton} svg {
+    display: none;
   }
 
   @media (max-width: 768px) {
     & ${StyledTwitterLogo} {
       padding-left: 20px;
+    }
+
+    ${StyledButton} {
+      font-size: 0;
+      width: 5rem;
+    }
+
+    ${StyledButton} svg {
+      display: inline;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    & {
+      flex: 0.3;
     }
   }
 `;

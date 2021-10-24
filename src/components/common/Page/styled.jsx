@@ -14,6 +14,12 @@ export const Main = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 1024px) {
+    & {
+      flex: 1;
+    }
+  }
 `;
 
 export const Header = styled.h2`
