@@ -4,7 +4,8 @@ Twitter clon implementation using React, syled components, React Router, React H
 
 ## How to install and use
 
-Clone the repository and execute <code>yarn install</code>, once all the dependencies have been installed, execute <code>yarn start</code>.
+Clone the repository, create a .env file with the key REACT_APP_HTTP_API, execute <code>yarn install</code>, once all the dependencies have
+been installed execute <code>yarn start</code>.
 
 ## How to build
 
