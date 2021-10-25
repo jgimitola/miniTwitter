@@ -9,7 +9,7 @@ const Aside = () => {
   const [tweets, setTweets] = useState([]);
 
   const fetchTrendings = async () => {
-    const res = await tweetService.getTrendings("auronplay");
+    const res = await tweetService.getTrendings("JoeBiden");
     try {
       setTweets(res.data.slice(0, 10));
     } catch (err) {
@@ -35,7 +35,7 @@ const Aside = () => {
           tweets.map((tweet, i) => (
             <TrendingCard
               key={i}
-              user={{ name: "Auron", username: "auronplay" }}
+              user={{ name: "Joe Biden", username: "JoeBiden" }}
               createdAt={tweet.created_at}
               content={tweet.text}
             />

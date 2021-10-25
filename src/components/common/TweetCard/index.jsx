@@ -2,6 +2,10 @@ import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import { TweetContext } from "../../../context/TweetContext";
+import { Button } from "./styled";
+import { ReactComponent as CommentIcon } from "../../../images/comment.svg";
+import { ReactComponent as LikeIcon } from "../../../images/like.svg";
+import { ReactComponent as RemoveIcon } from "../../../images/remove.svg";
 
 import {
   Container,
@@ -47,24 +51,26 @@ const TweetCard = ({
         </Header>
         <Content>{content}</Content>
         <Buttons>
-          <button
+          <Button
             onClick={() => {
               likeTweet(_id);
             }}
           >
-            likes: {likes}
-          </button>
-          <button onClick={handlerClickTweet}>
-            comments: {comments?.length}
-          </button>
-          <button
+            <LikeIcon />
+            {likes}
+          </Button>
+          <Button onClick={handlerClickTweet}>
+            <CommentIcon />
+            {comments?.length}
+          </Button>
+          <Button
             onClick={() => {
               removeTweet(_id);
               history.push("/home");
             }}
           >
-            remove
-          </button>
+            <RemoveIcon />
+          </Button>
         </Buttons>
       </ContentContainer>
     </Container>

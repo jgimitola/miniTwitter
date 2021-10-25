@@ -10,6 +10,8 @@ import {
   Name,
 } from "./styled";
 import PictureContainer from "../PictureContainer";
+import { Button } from "../TweetCard/styled";
+import { ReactComponent as RemoveIcon } from "../../../images/remove.svg";
 
 /**
  *
@@ -45,7 +47,9 @@ const CommentCard = ({
         </Header>
         <Content>{comment}</Content>
         <Buttons>
-          <button onClick={handlerRemove}>remove</button>
+          <Button onClick={handlerRemove}>
+            <RemoveIcon />
+          </Button>
         </Buttons>
       </ContentContainer>
     </Container>

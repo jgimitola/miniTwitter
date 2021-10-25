@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { tweetcard_gray, border_gray } from "../../../lib/ui/colors";
+import { tweetcard_gray, border_gray, primary } from "../../../lib/ui/colors";
 
 export const Container = styled.div`
   display: flex;
@@ -59,4 +59,38 @@ export const Buttons = styled.div`
   gap: 4rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  svg {
+    margin: 0 auto;
+    transform: scale(2.5);
+  }
+
+  & button {
+    display: flex;
+    flex-direction: row;
+  }
+`;
+
+export const Button = styled.button`
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px;
+
+  &:hover {
+    color: ${primary};
+  }
+
+  svg {
+    width: 6px;
+    height: 6px;
+    margin-right: 0.5rem;
+    padding-top: 2px;
+  }
+  &:hover svg {
+    fill: ${primary};
+  }
 `;
