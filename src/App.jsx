@@ -41,6 +41,9 @@ const App = () => {
     setIsOpen(false);
   };
 
+  /**
+   * When we put a url manually on production build a message says that the page couldn't be found.
+   */
   return (
     <BrowserRouter>
       <GlobalStyles />
